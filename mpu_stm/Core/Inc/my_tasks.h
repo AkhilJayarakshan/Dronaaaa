@@ -5,8 +5,8 @@
  *      Author: akhil
  */
 
-#ifndef INC_TASKS_H_
-#define INC_TASKS_H_
+#ifndef INC_MY_TASKS_H_
+#define INC_MY_TASKS_H_
 
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
@@ -16,4 +16,4 @@ extern TaskHandle_t imuTaskHandle;
 
 void createTask();
 
-#endif /* INC_TASKS_H_ */
+#endif /* INC_MY_TASKS_H_ */

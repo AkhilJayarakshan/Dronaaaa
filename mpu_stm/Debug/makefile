@@ -65,8 +65,8 @@ all: main-build
 main-build: Drone_Test.elf secondary-outputs
 
 # Tool invocations
-Drone_Test.elf Drone_Test.map: $(OBJS) $(USER_OBJS) C:\Users\akhil\OneDrive\Desktop\Drone\ Project\Drone_Test\STM32H7A3ZITXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Drone_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\akhil\OneDrive\Desktop\Drone Project\Drone_Test\STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Drone_Test.elf Drone_Test.map: $(OBJS) $(USER_OBJS) C:\Users\akhil\OneDrive\Desktop\Drone\ Project\Dronaaaa\mpu_stm\STM32H7A3ZITXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Drone_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\akhil\OneDrive\Desktop\Drone Project\Dronaaaa\mpu_stm\STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -17,11 +17,11 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <my_tasks.h>
 #include "main.h"
 #include "cmsis_os.h"
 #include "i2c.h"
 #include "gpio.h"
-#include "tasks.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -97,6 +97,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
+
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -124,6 +125,8 @@ int main(void)
     Error_Handler();
   }
 
+  HAL_NVIC_DisableIRQ(EXTI0_IRQn);
+  createTask();
   /* Start scheduler */
   osKernelStart();
 

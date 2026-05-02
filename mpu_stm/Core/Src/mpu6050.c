@@ -13,22 +13,33 @@
 
 extern I2C_HandleTypeDef hi2c1;
 
-// ---------------- INIT ----------------
 void MPU6050_Init(void)
 {
     uint8_t data;
 
-    // Wake up device
+    // Wake up
     data = 0x00;
     HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x6B, 1, &data, 1, 100);
 
-    // Set gyro config (±250 deg/s)
+    // Gyro ±250 dps
     data = 0x00;
     HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x1B, 1, &data, 1, 100);
 
-    // Set accel config (±2g)
+    // Accel ±2g
     data = 0x00;
     HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x1C, 1, &data, 1, 100);
+
+    // DLPF
+    data = 0x03;
+    HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x1A, 1, &data, 1, 100);
+
+    // Sample rate
+    data = 0x07;
+    HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x19, 1, &data, 1, 100);
+
+    // Interrupt pin config (latch)
+    data = 0x10;
+    HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, 0x37, 1, &data, 1, 100);
 
     // Enable data ready interrupt
     data = 0x01;

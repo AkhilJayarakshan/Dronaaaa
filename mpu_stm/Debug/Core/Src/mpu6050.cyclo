@@ -1,2 +1,2 @@
-../Core/Src/mpu6050.c:17:6:MPU6050_Init	1
-../Core/Src/mpu6050.c:38:12:MPU6050_Read_All	1
+../Core/Src/mpu6050.c:16:6:MPU6050_Init	1
+../Core/Src/mpu6050.c:49:12:MPU6050_Read_All	1
